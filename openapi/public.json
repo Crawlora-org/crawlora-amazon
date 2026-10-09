@@ -1,0 +1,940 @@
+{
+  "basePath": "/api/v1",
+  "definitions": {
+    "amazon.ChartCategoriesResponse": {
+      "properties": {
+        "categories": {
+          "items": {
+            "$ref": "#/definitions/amazon.ChartCategory"
+          },
+          "type": "array"
+        },
+        "category": {
+          "$ref": "#/definitions/amazon.ChartCategory"
+        },
+        "chart": {
+          "example": "best_sellers",
+          "type": "string"
+        },
+        "department": {
+          "example": "electronics",
+          "type": "string"
+        },
+        "node": {
+          "example": "172541",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "amazon.ChartCategory": {
+      "properties": {
+        "department": {
+          "example": "electronics",
+          "type": "string"
+        },
+        "link": {
+          "example": "https://www.amazon.com/gp/bestsellers/electronics/172541",
+          "type": "string"
+        },
+        "name": {
+          "example": "Headphones & Earbuds",
+          "type": "string"
+        },
+        "node": {
+          "example": "172541",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "amazon.ChartItem": {
+      "properties": {
+        "asin": {
+          "example": "B08JHCVHTY",
+          "type": "string"
+        },
+        "image": {
+          "example": "https://images-na.ssl-images-amazon.com/images/I/31YHGbJsldL._AC_UL300_SR300,200_.png",
+          "type": "string"
+        },
+        "link": {
+          "example": "https://www.amazon.com/dp/B08JHCVHTY/",
+          "type": "string"
+        },
+        "price": {
+          "example": 11.99,
+          "type": "number"
+        },
+        "rank": {
+          "example": 1,
+          "type": "integer"
+        },
+        "rating": {
+          "example": 4.4,
+          "type": "number"
+        },
+        "review_count": {
+          "example": 280227,
+          "type": "integer"
+        },
+        "title": {
+          "example": "Blink Plus Plan with monthly auto-renewal",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "amazon.ChartResponse": {
+      "properties": {
+        "category_name": {
+          "example": "Electronics",
+          "type": "string"
+        },
+        "chart": {
+          "example": "best_sellers",
+          "type": "string"
+        },
+        "department": {
+          "example": "electronics",
+          "type": "string"
+        },
+        "has_next_page": {
+          "example": true,
+          "type": "boolean"
+        },
+        "items": {
+          "items": {
+            "$ref": "#/definitions/amazon.ChartItem"
+          },
+          "type": "array"
+        },
+        "node": {
+          "example": "172541",
+          "type": "string"
+        },
+        "page": {
+          "example": 1,
+          "type": "integer"
+        },
+        "source_url": {
+          "example": "https://www.amazon.com/gp/bestsellers/electronics",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "amazon.Product": {
+      "properties": {
+        "about": {
+          "type": "string"
+        },
+        "asin": {
+          "example": "B0DGJ736JM",
+          "type": "string"
+        },
+        "availability": {
+          "example": true,
+          "type": "boolean"
+        },
+        "brand_link": {
+          "example": "https://www.amazon.com/stores/Apple/page/77D9E1F7-0337-4282-9DB6-B6B8FB2DC98D",
+          "type": "string"
+        },
+        "brand_name": {
+          "example": "Apple Store",
+          "type": "string"
+        },
+        "customers_say": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "images": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "is_free_delivery": {
+          "example": true,
+          "type": "boolean"
+        },
+        "is_free_return": {
+          "example": true,
+          "type": "boolean"
+        },
+        "link": {
+          "example": "https://www.amazon.com/dp/B0DGJ736JM/",
+          "type": "string"
+        },
+        "low_confidence": {
+          "description": "LowConfidence is true when the rating widget failed to parse (rating=0\nalongside a nonzero review count) on every hedge attempt, so the result\nis handed back unfiltered rather than discarded, but flagged as\nuntrusted and never cached as fresh.",
+          "example": false,
+          "type": "boolean"
+        },
+        "number_of_bought_in_last_month": {
+          "example": 1000,
+          "type": "integer"
+        },
+        "overview": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "price": {
+          "example": 189,
+          "type": "number"
+        },
+        "rating": {
+          "example": 4.4,
+          "type": "number"
+        },
+        "rating_hist": {
+          "additionalProperties": {
+            "format": "float64",
+            "type": "number"
+          },
+          "type": "object"
+        },
+        "review_count": {
+          "example": 1055,
+          "type": "integer"
+        },
+        "review_images": {
+          "items": {
+            "$ref": "#/definitions/amazon.ReviewImage"
+          },
+          "type": "array"
+        },
+        "review_insights": {
+          "items": {
+            "$ref": "#/definitions/amazon.ReviewInsight"
+          },
+          "type": "array"
+        },
+        "reviews": {
+          "items": {
+            "$ref": "#/definitions/amazon.Review"
+          },
+          "type": "array"
+        },
+        "seller_link": {
+          "example": "https://www.amazon.com/b?node=10158976011",
+          "type": "string"
+        },
+        "seller_name": {
+          "example": "Amazon Resale",
+          "type": "string"
+        },
+        "title": {
+          "example": "Apple Watch SE (2nd Gen) [GPS 40mm] Smartwatch with Midnight Aluminium Case with Midnight Sport Band S/M. Fitness and Sleep Trackers, Crash Detection, Heart Rate Monitor, Retina Display",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "amazon.Review": {
+      "properties": {
+        "content": {
+          "type": "string"
+        },
+        "country": {
+          "example": "United States",
+          "type": "string"
+        },
+        "helpful_count": {
+          "example": 4,
+          "type": "integer"
+        },
+        "link": {
+          "type": "string"
+        },
+        "rating": {
+          "example": 4,
+          "type": "number"
+        },
+        "review_date": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "user_link": {
+          "type": "string"
+        },
+        "user_name": {
+          "type": "string"
+        },
+        "verified_purchase": {
+          "example": true,
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "amazon.ReviewImage": {
+      "properties": {
+        "review_id": {
+          "example": "R31YRHYX7G6DNK",
+          "type": "string"
+        },
+        "thumbnail": {
+          "example": "https://m.media-amazon.com/images/I/example._SY250_.jpg",
+          "type": "string"
+        },
+        "url": {
+          "example": "https://m.media-amazon.com/images/I/example.jpg",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "amazon.ReviewInsight": {
+      "properties": {
+        "label": {
+          "example": "quality",
+          "type": "string"
+        },
+        "mention_percent": {
+          "example": 98,
+          "type": "integer"
+        },
+        "mentions": {
+          "example": 41,
+          "type": "integer"
+        },
+        "sentiment": {
+          "example": "positive",
+          "type": "string"
+        },
+        "summary": {
+          "example": "Customers like the build quality.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "amazon.SearchResponseItem": {
+      "properties": {
+        "asin": {
+          "example": "B0DGJ736JM",
+          "type": "string"
+        },
+        "image": {
+          "example": "https://m.media-amazon.com/images/I/61eE8SSyPWL._AC_UY545_FMwebp_QL65_.jpg",
+          "type": "string"
+        },
+        "is_free_delivery": {
+          "example": true,
+          "type": "boolean"
+        },
+        "is_sponsored": {
+          "example": true,
+          "type": "boolean"
+        },
+        "link": {
+          "example": "https://www.amazon.com/Apple-Smartwatch-Midnight-Aluminium-Detection/dp/B0DGJ736JM/",
+          "type": "string"
+        },
+        "list_price": {
+          "example": 249,
+          "type": "number"
+        },
+        "more_choice": {
+          "example": "https://www.amazon.com/gp/offer-listing/B08KYJPTB6/",
+          "type": "string"
+        },
+        "number_of_bought_in_last_month": {
+          "example": 1000,
+          "type": "integer"
+        },
+        "price": {
+          "example": 189,
+          "type": "number"
+        },
+        "rating": {
+          "example": 4.4,
+          "type": "number"
+        },
+        "review_count": {
+          "example": 1055,
+          "type": "integer"
+        },
+        "title": {
+          "example": "Watch SE (2nd Gen) [GPS 40mm] Smartwatch with Midnight Aluminium Case with Midnight Sport Band S/M. Fitness and Sleep Trackers, Crash Detection, Heart Rate Monitor, Retina Display",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "amazon.chartCategoriesResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/amazon.ChartCategoriesResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "amazon.chartsResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/amazon.ChartResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "amazon.productResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/amazon.Product"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "amazon.searchResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "items": {
+            "$ref": "#/definitions/amazon.SearchResponseItem"
+          },
+          "type": "array"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "amazon.suggestResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "app.Response": {
+      "description": "The Response struct is used for wrapping the API response with a code, message, and data.",
+      "properties": {
+        "code": {
+          "description": "Code is the HTTP status code or a custom code used to indicate the result of the request\n@example 200",
+          "type": "integer"
+        },
+        "data": {
+          "description": "Data is the response data (can be any object or null)\n@example {\"id\": 1, \"name\": \"John Doe\"}"
+        },
+        "msg": {
+          "description": "Msg is the message that describes the result of the request\n@example \"Request successful\""
+        }
+      },
+      "type": "object"
+    }
+  },
+  "host": "api.crawlora.net",
+  "info": {
+    "contact": {
+      "email": "support@crawlora.net",
+      "name": "API Support",
+      "url": "https://crawlora.net"
+    },
+    "description": "Crawlora is a hosted web-data and SERP API: call documented REST endpoints and get normalized JSON instead of HTML to parse — across search/SERP, maps and local, e-commerce, app stores, social, media and finance. One API key; Crawlora runs the proxy rotation, headless browsers and parsing behind the scenes. Billed pay-on-success: charged only on a successful 2xx response, 1-10 credits per call, with a free tier of 2,000 credits per month and no card. A hosted MCP server (mcp.crawlora.net/mcp) exposes the same catalog as agent tools. Search endpoints accept `q` as a universal alias for whichever search-term parameter they document (`query`, `term`, `keyword`, or Amazon's `k`), so one parameter name works across the whole catalog; an explicitly supplied documented name always wins.",
+    "license": {
+      "name": "Crawlora Terms of Service",
+      "url": "https://crawlora.net/terms"
+    },
+    "termsOfService": "https://crawlora.net/terms",
+    "title": "Crawlora API",
+    "version": "1.2",
+    "x-logo": {
+      "altText": "Crawlora",
+      "backgroundColor": "#FFFFFF",
+      "url": "https://raw.githubusercontent.com/Crawlora-org/crawlora-mcp/main/assets/logo-400x400.png"
+    }
+  },
+  "paths": {
+    "/amazon/charts": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns one page of a ranked Amazon chart (Best Sellers, New Releases, or Most Wished For) for a department or department subcategory on `amazon.com`. Discover valid department/node values with amazon-charts-categories.",
+        "operationId": "amazon-charts",
+        "parameters": [
+          {
+            "description": "Chart type",
+            "enum": [
+              "best_sellers",
+              "new_releases",
+              "most_wished_for"
+            ],
+            "in": "query",
+            "name": "chart",
+            "required": true,
+            "type": "string",
+            "x-example": "best_sellers"
+          },
+          {
+            "description": "Amazon department slug",
+            "in": "query",
+            "name": "department",
+            "required": true,
+            "type": "string",
+            "x-example": "electronics"
+          },
+          {
+            "description": "Numeric browse node id",
+            "in": "query",
+            "name": "node",
+            "type": "string",
+            "x-example": "172541"
+          },
+          {
+            "description": "1-based page number",
+            "in": "query",
+            "name": "page",
+            "type": "integer",
+            "x-example": 1
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/amazon.chartsResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Amazon product charts",
+        "tags": [
+          "amazon"
+        ]
+      }
+    },
+    "/amazon/charts/categories": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns the department and subcategory values amazon-charts accepts for a given chart. Omit department to list a chart's top-level departments; pass a department (and optionally a node) to get that category's own name plus its immediate child categories.",
+        "operationId": "amazon-charts-categories",
+        "parameters": [
+          {
+            "description": "Chart type",
+            "enum": [
+              "best_sellers",
+              "new_releases",
+              "most_wished_for"
+            ],
+            "in": "query",
+            "name": "chart",
+            "required": true,
+            "type": "string",
+            "x-example": "best_sellers"
+          },
+          {
+            "description": "Amazon department slug",
+            "in": "query",
+            "name": "department",
+            "type": "string",
+            "x-example": "electronics"
+          },
+          {
+            "description": "Numeric browse node id (requires department)",
+            "in": "query",
+            "name": "node",
+            "type": "string",
+            "x-example": "172541"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/amazon.chartCategoriesResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Amazon chart categories",
+        "tags": [
+          "amazon"
+        ]
+      }
+    },
+    "/amazon/product/{asin}": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized product details for an Amazon ASIN on `amazon.com`, including pricing, availability, overview data, inline review samples, and descriptive content.",
+        "operationId": "amazon-product",
+        "parameters": [
+          {
+            "description": "Amazon ASIN",
+            "in": "path",
+            "name": "asin",
+            "required": true,
+            "type": "string",
+            "x-example": "B0DGJ736JM"
+          },
+          {
+            "default": "en_US",
+            "description": "Amazon language",
+            "enum": [
+              "en_US"
+            ],
+            "in": "query",
+            "name": "language",
+            "type": "string"
+          },
+          {
+            "default": "USD",
+            "description": "Amazon currency",
+            "enum": [
+              "USD"
+            ],
+            "in": "query",
+            "name": "currency",
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/amazon.productResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Retrieve Amazon product details",
+        "tags": [
+          "amazon"
+        ]
+      }
+    },
+    "/amazon/search": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized Amazon search result cards for `amazon.com`.",
+        "operationId": "amazon-search",
+        "parameters": [
+          {
+            "description": "Search keyword",
+            "in": "query",
+            "name": "k",
+            "required": true,
+            "type": "string",
+            "x-example": "apple watch"
+          },
+          {
+            "description": "Sort order",
+            "in": "query",
+            "name": "s",
+            "type": "string",
+            "x-example": "review-rank"
+          },
+          {
+            "description": "1-based page number",
+            "in": "query",
+            "name": "page",
+            "type": "integer",
+            "x-example": 1
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/amazon.searchResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Search Amazon products",
+        "tags": [
+          "amazon"
+        ]
+      }
+    },
+    "/amazon/suggest/{keyword}": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns typeahead keyword suggestions from Amazon's public suggestion API for `amazon.com`.",
+        "operationId": "amazon-suggest",
+        "parameters": [
+          {
+            "description": "Suggestion prefix",
+            "in": "path",
+            "name": "keyword",
+            "required": true,
+            "type": "string",
+            "x-example": "apple"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/amazon.suggestResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Retrieve Amazon search suggestions",
+        "tags": [
+          "amazon"
+        ]
+      }
+    }
+  },
+  "schemes": [
+    "https"
+  ],
+  "securityDefinitions": {
+    "ApiKeyAuth": {
+      "in": "header",
+      "name": "x-api-key",
+      "type": "apiKey"
+    }
+  },
+  "swagger": "2.0",
+  "tags": [
+    {
+      "name": "amazon"
+    }
+  ]
+}
