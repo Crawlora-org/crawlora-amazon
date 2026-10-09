@@ -6,7 +6,7 @@ from .operations import OPERATION_COUNT, OPERATION_IDS, PLATFORM
 
 Client = AmazonClient
 AsyncClient = AsyncAmazonClient
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 DISPLAY_NAME = 'Amazon'
 PLATFORM = 'amazon'
 CONTRACT_REVISION = 'sha256:ccae432eea9beb55dab5108c0f607d20edb7b2a7ee7746836139bea73f70e547'
