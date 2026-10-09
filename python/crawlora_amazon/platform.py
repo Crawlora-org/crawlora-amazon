@@ -7,7 +7,7 @@ from .async_client import AsyncCrawloraClient
 class AmazonClient(CrawloraClient):
     """Synchronous Amazon API client."""
     def __init__(self, *args: Any, **kwargs: Any) -> None:
-        kwargs.setdefault('user_agent', 'crawlora-amazon-python/0.1.0')
+        kwargs.setdefault('user_agent', 'crawlora-amazon-python/0.1.1')
         super().__init__(*args, **kwargs)
 
     def charts(self, **params: Any) -> Any:
@@ -43,7 +43,7 @@ class AmazonClient(CrawloraClient):
 class AsyncAmazonClient(AsyncCrawloraClient):
     """Asynchronous Amazon API client."""
     def __init__(self, *args: Any, **kwargs: Any) -> None:
-        kwargs.setdefault('user_agent', 'crawlora-amazon-python/0.1.0')
+        kwargs.setdefault('user_agent', 'crawlora-amazon-python/0.1.1')
         super().__init__(*args, **kwargs)
 
     async def charts(self, **params: Any) -> Any:

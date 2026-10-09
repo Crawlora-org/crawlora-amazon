@@ -8,7 +8,7 @@ Official Crawlora client packages for the hosted Amazon API. These clients call 
 - Python: [`crawlora-amazon`](python/README.md)
 - Go: [`github.com/Crawlora-org/crawlora-amazon`](go.mod)
 - Ruby: [`crawlora-amazon`](ruby/README.md)
-- Java: [`net.crawlora:crawlora-amazon:0.1.0`](java/README.md)
+- Java: [`net.crawlora:crawlora-amazon:0.1.1`](java/README.md)
 - PHP: [`crawlora/amazon`](php/README.md)
 
 For installation and runnable examples, use the README for your language. See the [API endpoint and parameter reference](docs/usage.md) for shared operation details.

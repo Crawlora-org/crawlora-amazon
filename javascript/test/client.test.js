@@ -26,7 +26,7 @@ test("serializes required query/path values, adds API key and platform User-Agen
   await client.request("amazon-charts", {"chart": "best_sellers", "department": "sample"});
   assert.match(seen.url, /\/amazon\/charts/);
   assert.equal(seen.headers["x-api-key"], "secret");
-  assert.equal(seen.headers["user-agent"], "crawlora-amazon-js/0.1.0");
+  assert.equal(seen.headers["user-agent"], "crawlora-amazon-js/0.1.1");
 });
 
 test("allows caller User-Agent override and response text mode", async () => {

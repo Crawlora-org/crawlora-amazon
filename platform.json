@@ -5,7 +5,7 @@
   "display_name": "Amazon",
   "general_sdk_version": "1.46.0-sdk.1",
   "golang_module_name": "github.com/Crawlora-org/crawlora-amazon",
-  "golang_version": "0.1.0",
+  "golang_version": "0.1.1",
   "group_name": "amazon",
   "java_description": "Java client for Crawlora's hosted Amazon Marketplace API, with product search, suggestions, product details, and chart/category discovery. Requires a Crawlora API key.",
   "maven_artifact_id": "crawlora-amazon",
@@ -19,5 +19,24 @@
   "repository": "https://github.com/Crawlora-org/crawlora-amazon",
   "ruby_gem_name": "crawlora-amazon",
   "source_contract_sha256": "6ce716c52b7f17a1ab0960cdaefaeb1b40b71c25ad41be55e80b8b0910624f9d",
-  "version": "0.1.0"
+  "version": "0.1.1",
+  "releases": [
+    {
+      "version": "0.1.1",
+      "date": "2026-10-09",
+      "changes": [
+        "Align generated Amazon client package versions for the next release."
+      ]
+    },
+    {
+      "version": "0.1.0",
+      "date": "2026-10-07",
+      "changes": [
+        "Initial Amazon JavaScript and Python clients for Crawlora's hosted API.",
+        "Includes promise-based JavaScript and synchronous/asynchronous Python interfaces, generated from contract revision `sha256:ccae432eea9beb55dab5108c0f607d20edb7b2a7ee7746836139bea73f70e547`."
+      ]
+    }
+  ],
+  "php_history": "# Changelog\n\n## 0.1.1\n\n- Align generated Amazon client package versions for the next release.\n\n## 0.1.0\n\n- Initial focused Amazon PHP client for Crawlora's hosted API.",
+  "ruby_history": "# Changelog\n\n## 0.1.1\n\n- Align generated Amazon client package versions for the next release.\n\n## 0.1.0\n\n- Initial focused Amazon Ruby client for Crawlora's hosted API."
 }
