@@ -23,7 +23,7 @@
   },
   "homepage": "https://crawlora.net/?utm_source=packagist&utm_medium=referral&utm_campaign=platform-clients&utm_content=amazon-php-homepage",
   "support": {
-    "source": "https://github.com/Crawlora-org/crawlora-amazon-php",
+    "source": "https://github.com/Crawlora-org/crawlora-amazon",
     "docs": "https://crawlora.net/docs?utm_source=packagist&utm_medium=referral&utm_campaign=platform-clients&utm_content=amazon-php-api-docs"
   }
 }
