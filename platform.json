@@ -13,7 +13,7 @@
   "module_name": "crawlora_amazon",
   "npm_name": "@crawlora-org/amazon",
   "php_package_name": "crawlora/amazon",
-  "php_repository": "https://github.com/Crawlora-org/crawlora-amazon-php",
+  "php_repository": "https://github.com/Crawlora-org/crawlora-amazon",
   "platform": "amazon",
   "python_name": "crawlora-amazon",
   "repository": "https://github.com/Crawlora-org/crawlora-amazon",
