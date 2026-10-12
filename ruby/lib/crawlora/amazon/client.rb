@@ -19,7 +19,7 @@ module Crawlora
     end
 
     OPERATIONS = JSON.parse(<<~'JSON').freeze
-      {"amazon-charts": {"id": "amazon-charts", "method": "GET", "params": [{"description": "Chart type", "enum": ["best_sellers", "new_releases", "most_wished_for"], "in": "query", "name": "chart", "required": true, "type": "string", "x-example": "best_sellers"}, {"description": "Amazon department slug", "in": "query", "name": "department", "required": true, "type": "string", "x-example": "electronics"}, {"description": "Numeric browse node id", "in": "query", "name": "node", "type": "string", "x-example": "172541"}, {"description": "1-based page number", "in": "query", "name": "page", "type": "integer", "x-example": 1}], "path": "/amazon/charts", "pathParams": [], "produces": ["application/json"], "queryParams": [{"enum": ["best_sellers", "new_releases", "most_wished_for"], "in": "query", "name": "chart", "required": true, "type": "string"}, {"in": "query", "name": "department", "required": true, "type": "string"}, {"in": "query", "name": "node", "type": "string"}, {"in": "query", "name": "page", "type": "integer"}], "security": ["ApiKeyAuth"]}, "amazon-charts-categories": {"id": "amazon-charts-categories", "method": "GET", "params": [{"description": "Chart type", "enum": ["best_sellers", "new_releases", "most_wished_for"], "in": "query", "name": "chart", "required": true, "type": "string", "x-example": "best_sellers"}, {"description": "Amazon department slug", "in": "query", "name": "department", "type": "string", "x-example": "electronics"}, {"description": "Numeric browse node id (requires department)", "in": "query", "name": "node", "type": "string", "x-example": "172541"}], "path": "/amazon/charts/categories", "pathParams": [], "produces": ["application/json"], "queryParams": [{"enum": ["best_sellers", "new_releases", "most_wished_for"], "in": "query", "name": "chart", "required": true, "type": "string"}, {"in": "query", "name": "department", "type": "string"}, {"in": "query", "name": "node", "type": "string"}], "security": ["ApiKeyAuth"]}, "amazon-product": {"id": "amazon-product", "method": "GET", "params": [{"description": "Amazon ASIN", "in": "path", "name": "asin", "required": true, "type": "string", "x-example": "B0DGJ736JM"}, {"default": "en_US", "description": "Amazon language", "enum": ["en_US"], "in": "query", "name": "language", "type": "string"}, {"default": "USD", "description": "Amazon currency", "enum": ["USD"], "in": "query", "name": "currency", "type": "string"}], "path": "/amazon/product/{asin}", "pathParams": ["asin"], "produces": ["application/json"], "queryParams": [{"enum": ["en_US"], "in": "query", "name": "language", "type": "string"}, {"enum": ["USD"], "in": "query", "name": "currency", "type": "string"}], "security": ["ApiKeyAuth"]}, "amazon-search": {"id": "amazon-search", "method": "GET", "params": [{"description": "Search keyword", "in": "query", "name": "k", "required": true, "type": "string", "x-example": "apple watch"}, {"description": "Sort order", "in": "query", "name": "s", "type": "string", "x-example": "review-rank"}, {"description": "1-based page number", "in": "query", "name": "page", "type": "integer", "x-example": 1}], "path": "/amazon/search", "pathParams": [], "produces": ["application/json"], "queryParams": [{"in": "query", "name": "k", "required": true, "type": "string"}, {"in": "query", "name": "s", "type": "string"}, {"in": "query", "name": "page", "type": "integer"}], "security": ["ApiKeyAuth"]}, "amazon-suggest": {"id": "amazon-suggest", "method": "GET", "params": [{"description": "Suggestion prefix", "in": "path", "name": "keyword", "required": true, "type": "string", "x-example": "apple"}], "path": "/amazon/suggest/{keyword}", "pathParams": ["keyword"], "produces": ["application/json"], "queryParams": [], "security": ["ApiKeyAuth"]}}
+      {"amazon-charts": {"bodyParam": null, "bodyRequired": false, "id": "amazon-charts", "method": "GET", "params": [{"description": "Chart type", "enum": ["best_sellers", "new_releases", "most_wished_for"], "in": "query", "name": "chart", "required": true, "type": "string", "x-example": "best_sellers"}, {"description": "Amazon department slug", "in": "query", "name": "department", "required": true, "type": "string", "x-example": "electronics"}, {"description": "Numeric browse node id", "in": "query", "name": "node", "type": "string", "x-example": "172541"}, {"description": "1-based page number", "in": "query", "name": "page", "type": "integer", "x-example": 1}], "path": "/amazon/charts", "pathParams": [], "produces": ["application/json"], "queryParams": [{"enum": ["best_sellers", "new_releases", "most_wished_for"], "in": "query", "name": "chart", "required": true, "type": "string"}, {"in": "query", "name": "department", "required": true, "type": "string"}, {"in": "query", "name": "node", "type": "string"}, {"in": "query", "name": "page", "type": "integer"}], "security": ["ApiKeyAuth"]}, "amazon-charts-categories": {"bodyParam": null, "bodyRequired": false, "id": "amazon-charts-categories", "method": "GET", "params": [{"description": "Chart type", "enum": ["best_sellers", "new_releases", "most_wished_for"], "in": "query", "name": "chart", "required": true, "type": "string", "x-example": "best_sellers"}, {"description": "Amazon department slug", "in": "query", "name": "department", "type": "string", "x-example": "electronics"}, {"description": "Numeric browse node id (requires department)", "in": "query", "name": "node", "type": "string", "x-example": "172541"}], "path": "/amazon/charts/categories", "pathParams": [], "produces": ["application/json"], "queryParams": [{"enum": ["best_sellers", "new_releases", "most_wished_for"], "in": "query", "name": "chart", "required": true, "type": "string"}, {"in": "query", "name": "department", "type": "string"}, {"in": "query", "name": "node", "type": "string"}], "security": ["ApiKeyAuth"]}, "amazon-product": {"bodyParam": null, "bodyRequired": false, "id": "amazon-product", "method": "GET", "params": [{"description": "Amazon ASIN", "in": "path", "name": "asin", "required": true, "type": "string", "x-example": "B0DGJ736JM"}, {"default": "en_US", "description": "Amazon language", "enum": ["en_US"], "in": "query", "name": "language", "type": "string"}, {"default": "USD", "description": "Amazon currency", "enum": ["USD"], "in": "query", "name": "currency", "type": "string"}], "path": "/amazon/product/{asin}", "pathParams": ["asin"], "produces": ["application/json"], "queryParams": [{"enum": ["en_US"], "in": "query", "name": "language", "type": "string"}, {"enum": ["USD"], "in": "query", "name": "currency", "type": "string"}], "security": ["ApiKeyAuth"]}, "amazon-search": {"bodyParam": null, "bodyRequired": false, "id": "amazon-search", "method": "GET", "params": [{"description": "Search keyword", "in": "query", "name": "k", "required": true, "type": "string", "x-example": "apple watch"}, {"description": "Sort order", "in": "query", "name": "s", "type": "string", "x-example": "review-rank"}, {"description": "1-based page number", "in": "query", "name": "page", "type": "integer", "x-example": 1}], "path": "/amazon/search", "pathParams": [], "produces": ["application/json"], "queryParams": [{"in": "query", "name": "k", "required": true, "type": "string"}, {"in": "query", "name": "s", "type": "string"}, {"in": "query", "name": "page", "type": "integer"}], "security": ["ApiKeyAuth"]}, "amazon-suggest": {"bodyParam": null, "bodyRequired": false, "id": "amazon-suggest", "method": "GET", "params": [{"description": "Suggestion prefix", "in": "path", "name": "keyword", "required": true, "type": "string", "x-example": "apple"}], "path": "/amazon/suggest/{keyword}", "pathParams": ["keyword"], "produces": ["application/json"], "queryParams": [], "security": ["ApiKeyAuth"]}}
     JSON
     OPERATION_IDS = JSON.parse(<<~'JSON').freeze
       ["amazon-charts", "amazon-charts-categories", "amazon-product", "amazon-search", "amazon-suggest"]
@@ -29,7 +29,7 @@ module Crawlora
     class Client
       attr_reader :base_url
 
-      def initialize(api_key: ENV["CRAWLORA_API_KEY"], base_url: "https://api.crawlora.net/api/v1", timeout: 30, user_agent: "crawlora-amazon-ruby/0.1.1", transport: nil)
+      def initialize(api_key: ENV["CRAWLORA_API_KEY"], base_url: "https://api.crawlora.net/api/v1", timeout: 30, user_agent: "crawlora-amazon-ruby/0.1.2", transport: nil)
         @api_key = api_key
         @base_url = base_url.to_s.sub(%r{/+$}, "")
         @timeout = Float(timeout)
@@ -45,15 +45,24 @@ module Crawlora
         raise Errors::ClientError.new("unknown operation: #{operation_id}", operation_id: operation_id) unless operation
         raise Errors::ClientError.new("Crawlora API key is required", operation_id: operation_id) if @api_key.nil? || @api_key.to_s.empty?
         normalized = params.each_with_object({}) { |(key, value), out| out[key.to_s] = value }
+        payload = request_body(operation, normalized)
         url = build_url(operation, normalized)
         uri = URI.parse(url)
-        request = Net::HTTP::Get.new(uri)
+        request = operation["method"] == "POST" ? Net::HTTP::Post.new(uri) : Net::HTTP::Get.new(uri)
+        unless payload.nil?
+          request.body = payload
+          request["Content-Type"] = "application/json"
+        end
         request["x-api-key"] = @api_key
         request["User-Agent"] = @user_agent
         request["Accept"] = operation["produces"].include?("text/plain") ? "application/json, text/plain" : "application/json"
         begin
           if @transport
-            response = @transport.call(url, request.to_hash, @timeout)
+            response = if operation["method"] == "POST"
+              @transport.call(url, request.to_hash, @timeout, "POST", payload)
+            else
+              @transport.call(url, request.to_hash, @timeout)
+            end
             status = Integer(response.fetch(:status) { response.fetch("status") })
             body = response.fetch(:body) { response.fetch("body", "") }
             headers = response.fetch(:headers) { response.fetch("headers", {}) }
@@ -128,8 +137,21 @@ module Crawlora
 
       private
 
+      # POST operations take their JSON body under the body parameter name or "body".
+      def request_body(operation, params)
+        name = operation["bodyParam"]
+        return nil if name.nil?
+        value = params.key?(name) ? params[name] : params["body"]
+        if value.nil?
+          raise Errors::ClientError.new("missing request body: #{name}", operation_id: operation["id"]) if operation["bodyRequired"]
+          return nil
+        end
+        value.is_a?(String) ? value : JSON.generate(value)
+      end
+
       def build_url(operation, params)
         known = operation["params"].map { |param| param["name"] }
+        known << "body" if operation["bodyParam"]
         unknown = params.keys - known
         raise Errors::ClientError.new("unknown parameters: #{unknown.join(', ')}", operation_id: operation["id"]) unless unknown.empty?
         path = operation["path"].dup

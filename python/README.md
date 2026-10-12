@@ -1,7 +1,6 @@
-# crawlora-amazon
+# crawlora-amazon — Amazon API client for Python
 
-Python client for Crawlora's hosted Amazon API. It calls Crawlora's
-service at [Crawlora](https://crawlora.net/?utm_source=pypi&utm_medium=referral&utm_campaign=platform-clients&utm_content=amazon-python-homepage); it does not run a browser or scrape
+Python client for Crawlora's hosted Amazon API. It exposes 5 API endpoints covering product search, suggestions, product details, and chart/category discovery. Requests go to [Crawlora](https://crawlora.net/?utm_source=pypi&utm_medium=referral&utm_campaign=platform-clients&utm_content=amazon-python-homepage); the package does not run a browser or scrape
 Amazon locally. A Crawlora account and `CRAWLORA_API_KEY` are required,
 and API use is billed under your Crawlora account. Crawlora is independent from and not endorsed by
 Amazon or its owners.
@@ -67,6 +66,18 @@ asyncio.run(main())
 ```
 
 See the [runnable example](https://github.com/Crawlora-org/crawlora-amazon/blob/main/examples/python.py) for a complete usage example.
+
+## Supported Amazon API endpoints
+
+This package exposes every route below through direct snake_case methods and the `amazon` group. See the [endpoint and parameter reference](https://github.com/Crawlora-org/crawlora-amazon/blob/main/docs/usage.md) for complete input details.
+
+| Method | Endpoint | API operation | Description |
+| --- | --- | --- | --- |
+| `GET` | `/amazon/charts` | `amazon-charts` | Amazon product charts |
+| `GET` | `/amazon/charts/categories` | `amazon-charts-categories` | Amazon chart categories |
+| `GET` | `/amazon/product/{asin}` | `amazon-product` | Retrieve Amazon product details |
+| `GET` | `/amazon/search` | `amazon-search` | Search Amazon products |
+| `GET` | `/amazon/suggest/{keyword}` | `amazon-suggest` | Retrieve Amazon search suggestions |
 
 ## Configuration
 

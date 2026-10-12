@@ -3,8 +3,8 @@ require_relative "lib/crawlora/amazon/version"
 Gem::Specification.new do |spec|
   spec.name = "crawlora-amazon"
   spec.version = Crawlora::Amazon::VERSION
-  spec.summary = "Amazon client for the Crawlora hosted API"
-  spec.description = "Credential-free Amazon API access through Crawlora's hosted service."
+  spec.summary = "Amazon API client for Crawlora (5 endpoints)"
+  spec.description = "Ruby client for Crawlora's hosted Amazon API. Covers product search, suggestions, product details, and chart/category discovery across 5 endpoints."
   spec.authors = ["Crawlora"]
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6"

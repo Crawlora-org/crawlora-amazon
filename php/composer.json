@@ -1,6 +1,21 @@
 {
   "name": "crawlora/amazon",
-  "description": "Amazon client for the Crawlora hosted API",
+  "description": "Crawlora Amazon API client with 5 endpoints for product search, suggestions, product details, and chart/category discovery",
+  "keywords": [
+    "crawlora",
+    "api-client",
+    "sdk",
+    "web-scraping",
+    "scraping-api",
+    "amazon",
+    "amazon-api",
+    "amazon-scraper",
+    "amazon-data",
+    "amazon-product-search",
+    "amazon-suggestions",
+    "amazon-product-details",
+    "amazon-chart-category-discovery"
+  ],
   "type": "library",
   "license": "MIT",
   "require": {

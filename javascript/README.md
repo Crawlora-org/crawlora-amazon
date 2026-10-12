@@ -1,7 +1,7 @@
-# @crawlora-org/amazon
+# @crawlora-org/amazon — Amazon API client for JavaScript and TypeScript
 
 JavaScript and TypeScript client for Crawlora's hosted Amazon API.
-It calls [Crawlora](https://crawlora.net/?utm_source=npm&utm_medium=referral&utm_campaign=platform-clients&utm_content=amazon-javascript-homepage); it does not run a browser or scrape Amazon locally. A Crawlora account and `CRAWLORA_API_KEY` are required, and API use is billed under your Crawlora account. Crawlora is independent from and not endorsed by Amazon or its owners.
+It exposes 5 API endpoints for product search, suggestions, product details, and chart/category discovery through [Crawlora](https://crawlora.net/?utm_source=npm&utm_medium=referral&utm_campaign=platform-clients&utm_content=amazon-javascript-homepage). It does not run a browser or scrape Amazon locally. A Crawlora account and `CRAWLORA_API_KEY` are required, and API use is billed under your Crawlora account. Crawlora is independent from and not endorsed by Amazon or its owners.
 
 ## Install
 
@@ -40,6 +40,17 @@ group. See the full method and parameter list in the [online reference](https://
 
 Methods return promises and can be awaited. See the [runnable example](https://github.com/Crawlora-org/crawlora-amazon/blob/main/examples/javascript.mjs) for a complete usage example.
 
+## Supported Amazon API endpoints
+
+This package exposes each route below as a direct method and through the `amazon` group. See the [endpoint and parameter reference](https://github.com/Crawlora-org/crawlora-amazon/blob/main/docs/usage.md) for complete input details.
+
+| Method | Endpoint | API operation | Description |
+| --- | --- | --- | --- |
+| `GET` | `/amazon/charts` | `amazon-charts` | Amazon product charts |
+| `GET` | `/amazon/charts/categories` | `amazon-charts-categories` | Amazon chart categories |
+| `GET` | `/amazon/product/{asin}` | `amazon-product` | Retrieve Amazon product details |
+| `GET` | `/amazon/search` | `amazon-search` | Search Amazon products |
+| `GET` | `/amazon/suggest/{keyword}` | `amazon-suggest` | Retrieve Amazon search suggestions |
 
 ## Configuration
 

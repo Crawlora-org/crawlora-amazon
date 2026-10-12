@@ -1,10 +1,10 @@
 {
   "name": "@crawlora-org/amazon",
-  "version": "0.1.1",
-  "description": "Typed JavaScript client for the Crawlora Amazon API",
+  "version": "0.1.2",
+  "description": "Crawlora Amazon API client with 5 endpoints for product search, suggestions, product details, and chart/category discovery",
   "homepage": "https://crawlora.net/?utm_source=npm&utm_medium=referral&utm_campaign=platform-clients&utm_content=amazon-javascript-homepage",
   "bugs": { "url": "https://github.com/Crawlora-org/crawlora-amazon/issues" },
-  "keywords": ["crawlora", "api-client", "web-scraping", "amazon", "typescript"],
+  "keywords": ["crawlora", "api-client", "sdk", "web-scraping", "scraping-api", "amazon", "amazon-api", "amazon-scraper", "amazon-data", "amazon-product-search", "amazon-suggestions", "amazon-product-details", "amazon-chart-category-discovery"],
   "type": "module",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
