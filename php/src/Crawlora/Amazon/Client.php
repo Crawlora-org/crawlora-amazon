@@ -26,7 +26,7 @@ final class Client
     private ?\Closure $transport;
 
     public const PLATFORM = 'amazon';
-    public const VERSION = '0.1.1';
+    public const VERSION = '0.1.2';
     public const OPERATION_COUNT = 5;
     public const OPERATION_IDS = ["amazon-charts", "amazon-charts-categories", "amazon-product", "amazon-search", "amazon-suggest"];
 
@@ -37,7 +37,7 @@ final class Client
         $this->timeout = $timeout;
         $this->transport = $transport === null ? null : \Closure::fromCallable($transport);
         self::$operations ??= json_decode(<<<'JSON'
-{"amazon-charts": {"id": "amazon-charts", "method": "GET", "params": [{"description": "Chart type", "enum": ["best_sellers", "new_releases", "most_wished_for"], "in": "query", "name": "chart", "required": true, "type": "string", "x-example": "best_sellers"}, {"description": "Amazon department slug", "in": "query", "name": "department", "required": true, "type": "string", "x-example": "electronics"}, {"description": "Numeric browse node id", "in": "query", "name": "node", "type": "string", "x-example": "172541"}, {"description": "1-based page number", "in": "query", "name": "page", "type": "integer", "x-example": 1}], "path": "/amazon/charts", "pathParams": [], "produces": ["application/json"], "queryParams": [{"enum": ["best_sellers", "new_releases", "most_wished_for"], "in": "query", "name": "chart", "required": true, "type": "string"}, {"in": "query", "name": "department", "required": true, "type": "string"}, {"in": "query", "name": "node", "type": "string"}, {"in": "query", "name": "page", "type": "integer"}], "security": ["ApiKeyAuth"]}, "amazon-charts-categories": {"id": "amazon-charts-categories", "method": "GET", "params": [{"description": "Chart type", "enum": ["best_sellers", "new_releases", "most_wished_for"], "in": "query", "name": "chart", "required": true, "type": "string", "x-example": "best_sellers"}, {"description": "Amazon department slug", "in": "query", "name": "department", "type": "string", "x-example": "electronics"}, {"description": "Numeric browse node id (requires department)", "in": "query", "name": "node", "type": "string", "x-example": "172541"}], "path": "/amazon/charts/categories", "pathParams": [], "produces": ["application/json"], "queryParams": [{"enum": ["best_sellers", "new_releases", "most_wished_for"], "in": "query", "name": "chart", "required": true, "type": "string"}, {"in": "query", "name": "department", "type": "string"}, {"in": "query", "name": "node", "type": "string"}], "security": ["ApiKeyAuth"]}, "amazon-product": {"id": "amazon-product", "method": "GET", "params": [{"description": "Amazon ASIN", "in": "path", "name": "asin", "required": true, "type": "string", "x-example": "B0DGJ736JM"}, {"default": "en_US", "description": "Amazon language", "enum": ["en_US"], "in": "query", "name": "language", "type": "string"}, {"default": "USD", "description": "Amazon currency", "enum": ["USD"], "in": "query", "name": "currency", "type": "string"}], "path": "/amazon/product/{asin}", "pathParams": ["asin"], "produces": ["application/json"], "queryParams": [{"enum": ["en_US"], "in": "query", "name": "language", "type": "string"}, {"enum": ["USD"], "in": "query", "name": "currency", "type": "string"}], "security": ["ApiKeyAuth"]}, "amazon-search": {"id": "amazon-search", "method": "GET", "params": [{"description": "Search keyword", "in": "query", "name": "k", "required": true, "type": "string", "x-example": "apple watch"}, {"description": "Sort order", "in": "query", "name": "s", "type": "string", "x-example": "review-rank"}, {"description": "1-based page number", "in": "query", "name": "page", "type": "integer", "x-example": 1}], "path": "/amazon/search", "pathParams": [], "produces": ["application/json"], "queryParams": [{"in": "query", "name": "k", "required": true, "type": "string"}, {"in": "query", "name": "s", "type": "string"}, {"in": "query", "name": "page", "type": "integer"}], "security": ["ApiKeyAuth"]}, "amazon-suggest": {"id": "amazon-suggest", "method": "GET", "params": [{"description": "Suggestion prefix", "in": "path", "name": "keyword", "required": true, "type": "string", "x-example": "apple"}], "path": "/amazon/suggest/{keyword}", "pathParams": ["keyword"], "produces": ["application/json"], "queryParams": [], "security": ["ApiKeyAuth"]}}
+{"amazon-charts": {"bodyParam": null, "bodyRequired": false, "id": "amazon-charts", "method": "GET", "params": [{"description": "Chart type", "enum": ["best_sellers", "new_releases", "most_wished_for"], "in": "query", "name": "chart", "required": true, "type": "string", "x-example": "best_sellers"}, {"description": "Amazon department slug", "in": "query", "name": "department", "required": true, "type": "string", "x-example": "electronics"}, {"description": "Numeric browse node id", "in": "query", "name": "node", "type": "string", "x-example": "172541"}, {"description": "1-based page number", "in": "query", "name": "page", "type": "integer", "x-example": 1}], "path": "/amazon/charts", "pathParams": [], "produces": ["application/json"], "queryParams": [{"enum": ["best_sellers", "new_releases", "most_wished_for"], "in": "query", "name": "chart", "required": true, "type": "string"}, {"in": "query", "name": "department", "required": true, "type": "string"}, {"in": "query", "name": "node", "type": "string"}, {"in": "query", "name": "page", "type": "integer"}], "security": ["ApiKeyAuth"]}, "amazon-charts-categories": {"bodyParam": null, "bodyRequired": false, "id": "amazon-charts-categories", "method": "GET", "params": [{"description": "Chart type", "enum": ["best_sellers", "new_releases", "most_wished_for"], "in": "query", "name": "chart", "required": true, "type": "string", "x-example": "best_sellers"}, {"description": "Amazon department slug", "in": "query", "name": "department", "type": "string", "x-example": "electronics"}, {"description": "Numeric browse node id (requires department)", "in": "query", "name": "node", "type": "string", "x-example": "172541"}], "path": "/amazon/charts/categories", "pathParams": [], "produces": ["application/json"], "queryParams": [{"enum": ["best_sellers", "new_releases", "most_wished_for"], "in": "query", "name": "chart", "required": true, "type": "string"}, {"in": "query", "name": "department", "type": "string"}, {"in": "query", "name": "node", "type": "string"}], "security": ["ApiKeyAuth"]}, "amazon-product": {"bodyParam": null, "bodyRequired": false, "id": "amazon-product", "method": "GET", "params": [{"description": "Amazon ASIN", "in": "path", "name": "asin", "required": true, "type": "string", "x-example": "B0DGJ736JM"}, {"default": "en_US", "description": "Amazon language", "enum": ["en_US"], "in": "query", "name": "language", "type": "string"}, {"default": "USD", "description": "Amazon currency", "enum": ["USD"], "in": "query", "name": "currency", "type": "string"}], "path": "/amazon/product/{asin}", "pathParams": ["asin"], "produces": ["application/json"], "queryParams": [{"enum": ["en_US"], "in": "query", "name": "language", "type": "string"}, {"enum": ["USD"], "in": "query", "name": "currency", "type": "string"}], "security": ["ApiKeyAuth"]}, "amazon-search": {"bodyParam": null, "bodyRequired": false, "id": "amazon-search", "method": "GET", "params": [{"description": "Search keyword", "in": "query", "name": "k", "required": true, "type": "string", "x-example": "apple watch"}, {"description": "Sort order", "in": "query", "name": "s", "type": "string", "x-example": "review-rank"}, {"description": "1-based page number", "in": "query", "name": "page", "type": "integer", "x-example": 1}], "path": "/amazon/search", "pathParams": [], "produces": ["application/json"], "queryParams": [{"in": "query", "name": "k", "required": true, "type": "string"}, {"in": "query", "name": "s", "type": "string"}, {"in": "query", "name": "page", "type": "integer"}], "security": ["ApiKeyAuth"]}, "amazon-suggest": {"bodyParam": null, "bodyRequired": false, "id": "amazon-suggest", "method": "GET", "params": [{"description": "Suggestion prefix", "in": "path", "name": "keyword", "required": true, "type": "string", "x-example": "apple"}], "path": "/amazon/suggest/{keyword}", "pathParams": ["keyword"], "produces": ["application/json"], "queryParams": [], "security": ["ApiKeyAuth"]}}
 JSON, true, 512, JSON_THROW_ON_ERROR);
     }
 
@@ -53,14 +53,18 @@ JSON, true, 512, JSON_THROW_ON_ERROR);
         if ($this->apiKey === '') {
             throw new ClientException('Crawlora API key is required', null, $operationId);
         }
+        $payload = $this->requestBody($operation, $params);
         $url = $this->buildUrl($operation, $params);
         $headers = [
             'x-api-key: ' . $this->apiKey,
-            'User-Agent: crawlora-amazon-php/0.1.1',
+            'User-Agent: crawlora-amazon-php/0.1.2',
             'Accept: ' . (in_array('text/plain', $operation['produces'], true) ? 'application/json, text/plain' : 'application/json'),
         ];
+        if ($payload !== null) {
+            $headers[] = 'Content-Type: application/json';
+        }
         try {
-            [$status, $contentType, $body] = $this->send($url, $headers, $operationId);
+            [$status, $contentType, $body] = $this->send($url, $headers, $operationId, $operation['method'], $payload);
         } catch (CrawloraException $exception) {
             throw $exception;
         } catch (\Throwable $exception) {
@@ -129,9 +133,29 @@ JSON, true, 512, JSON_THROW_ON_ERROR);
         return $this->request("amazon-suggest", $params, $responseType);
     }
 
+    /** POST operations take their JSON body under the body parameter name or "body". */
+    private function requestBody(array $operation, array $params): ?string
+    {
+        $name = $operation['bodyParam'] ?? null;
+        if ($name === null) {
+            return null;
+        }
+        $value = $params[$name] ?? ($params['body'] ?? null);
+        if ($value === null) {
+            if ($operation['bodyRequired'] ?? false) {
+                throw new ClientException('Missing request body: ' . $name, null, $operation['id']);
+            }
+            return null;
+        }
+        return is_string($value) ? $value : json_encode($value, JSON_THROW_ON_ERROR);
+    }
+
     private function buildUrl(array $operation, array $params): string
     {
         $known = array_column($operation['params'], 'name');
+        if (($operation['bodyParam'] ?? null) !== null) {
+            $known[] = 'body';
+        }
         $unknown = array_diff(array_keys($params), $known, ['response_type', '_response_type']);
         if ($unknown !== []) {
             throw new ClientException('Unknown parameters: ' . implode(', ', $unknown), null, $operation['id']);
@@ -198,17 +222,26 @@ JSON, true, 512, JSON_THROW_ON_ERROR);
         return (string) $value;
     }
 
-    private function send(string $url, array $headers, string $operationId): array
+    private function send(string $url, array $headers, string $operationId, string $method = 'GET', ?string $payload = null): array
     {
         if ($this->transport !== null) {
-            $result = ($this->transport)($url, $headers, $this->timeout);
+            $result = $method === 'POST'
+                ? ($this->transport)($url, $headers, $this->timeout, $method, $payload)
+                : ($this->transport)($url, $headers, $this->timeout);
             return [(int) $result['status'], (string) ($result['content_type'] ?? ''), (string) ($result['body'] ?? '')];
         }
         $handle = curl_init($url);
         if ($handle === false) {
             throw new NetworkException('Could not initialize cURL', null, $operationId);
         }
-        curl_setopt_array($handle, [
+        curl_setopt_array($handle, $method === 'POST' ? [
+            CURLOPT_POST => true,
+            CURLOPT_POSTFIELDS => $payload ?? '',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_HTTPHEADER => $headers,
+            CURLOPT_TIMEOUT_MS => (int) ($this->timeout * 1000),
+            CURLOPT_CONNECTTIMEOUT_MS => (int) ($this->timeout * 1000),
+        ] : [
             CURLOPT_HTTPGET => true,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_HTTPHEADER => $headers,

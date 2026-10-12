@@ -1,6 +1,6 @@
-# Crawlora Amazon Java Client
+# Crawlora Amazon API client for Java
 
-The official Java client for Crawlora's hosted Amazon API. It calls Crawlora's hosted API with your `x-api-key`; it does not connect to the upstream site directly.
+The official Java client for Crawlora's hosted Amazon API. It exposes 5 endpoints covering product search, suggestions, product details, and chart/category discovery. Requests use your `x-api-key`; the client does not connect to the upstream site directly.
 
 ## Install
 
@@ -8,7 +8,7 @@ The official Java client for Crawlora's hosted Amazon API. It calls Crawlora's h
 <dependency>
   <groupId>net.crawlora</groupId>
   <artifactId>crawlora-amazon</artifactId>
-  <version>0.1.1</version>
+  <version>0.1.2</version>
 </dependency>
 ```
 
@@ -30,6 +30,18 @@ try (Client client = new Client(System.getenv("CRAWLORA_API_KEY"))) {
 Each operation has a direct method that accepts the parameters documented for that endpoint. Use `client.request(operationId, params)` for generic dispatch. `Client.OPERATION_IDS`, `Client.OPERATION_COUNT`, `client.getOperationIds()`, and `client.getOperationCount()` describe this platform's operations only.
 
 For custom hosted API routing and timeouts, use `new Client(apiKey, baseUrl, Duration.ofSeconds(20))`. Text responses are returned as `String`; JSON responses are parsed into Java maps, lists, and scalar values.
+
+## Supported Amazon API endpoints
+
+Browse every route included in this Java package. The [endpoint reference](https://github.com/Crawlora-org/crawlora-amazon/blob/main/docs/usage.md) also lists parameters and response details.
+
+| Method | Endpoint | API operation | Description |
+| --- | --- | --- | --- |
+| `GET` | `/amazon/charts` | `amazon-charts` | Amazon product charts |
+| `GET` | `/amazon/charts/categories` | `amazon-charts-categories` | Amazon chart categories |
+| `GET` | `/amazon/product/{asin}` | `amazon-product` | Retrieve Amazon product details |
+| `GET` | `/amazon/search` | `amazon-search` | Search Amazon products |
+| `GET` | `/amazon/suggest/{keyword}` | `amazon-suggest` | Retrieve Amazon search suggestions |
 
 ## Links
 

@@ -50,6 +50,8 @@
           "type": "integer"
         }
       ],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [
         {
           "description": "Chart type",
@@ -122,6 +124,8 @@
           "type": "string"
         }
       ],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [
         {
           "description": "Chart type",
@@ -183,6 +187,8 @@
           ]
         }
       ],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [
         {
           "description": "Amazon ASIN",
@@ -243,6 +249,8 @@
           "type": "integer"
         }
       ],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [
         {
           "description": "Search keyword",
@@ -282,6 +290,8 @@
         "keyword"
       ],
       "queryParams": [],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [
         {
           "description": "Suggestion prefix",

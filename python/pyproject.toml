@@ -4,9 +4,10 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "crawlora-amazon"
-version = "0.1.1"
-description = "Typed Amazon client for the Crawlora hosted API"
+version = "0.1.2"
+description = "Crawlora Amazon API client with 5 endpoints for product search, suggestions, product details, and chart/category discovery"
 readme = "README.md"
+keywords = ["crawlora", "api-client", "sdk", "web-scraping", "scraping-api", "amazon", "amazon-api", "amazon-scraper", "amazon-data", "amazon-product-search", "amazon-suggestions", "amazon-product-details", "amazon-chart-category-discovery"]
 requires-python = ">=3.10"
 license = "MIT"
 license-files = ["LICENSE"]

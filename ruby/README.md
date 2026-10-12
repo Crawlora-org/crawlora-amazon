@@ -1,6 +1,6 @@
-# Crawlora Amazon Ruby client
+# Crawlora Amazon API client for Ruby (`crawlora-amazon`)
 
-This gem calls the Crawlora hosted API at `https://api.crawlora.net/api/v1`. It does not call or scrape Amazon directly. Requests require your Crawlora API key and use your account's service plan.
+This Ruby gem calls Crawlora's hosted Amazon API at `https://api.crawlora.net/api/v1`. It exposes 5 endpoints covering product search, suggestions, product details, and chart/category discovery; it does not call or scrape Amazon directly. Requests require your Crawlora API key and use your account's service plan.
 
 ## Install
 
@@ -29,5 +29,17 @@ client.close
 ```
 
 Client options include `api_key`, `base_url`, and `timeout`. Ruby stdlib provides the HTTP and JSON support.
+
+## Supported Amazon API endpoints
+
+Browse every route included in this gem. The [endpoint reference](https://github.com/Crawlora-org/crawlora-amazon/blob/main/docs/usage.md) includes parameter and response details.
+
+| Method | Endpoint | API operation | Description |
+| --- | --- | --- | --- |
+| `GET` | `/amazon/charts` | `amazon-charts` | Amazon product charts |
+| `GET` | `/amazon/charts/categories` | `amazon-charts-categories` | Amazon chart categories |
+| `GET` | `/amazon/product/{asin}` | `amazon-product` | Retrieve Amazon product details |
+| `GET` | `/amazon/search` | `amazon-search` | Search Amazon products |
+| `GET` | `/amazon/suggest/{keyword}` | `amazon-suggest` | Retrieve Amazon search suggestions |
 
 See [Crawlora](https://crawlora.net/?utm_source=rubygems&utm_medium=referral&utm_campaign=platform-clients&utm_content=amazon-ruby-homepage), the [API documentation](https://crawlora.net/docs?utm_source=rubygems&utm_medium=referral&utm_campaign=platform-clients&utm_content=amazon-ruby-api-docs), and [the package repository](https://github.com/Crawlora-org/crawlora-amazon) for account setup, the API operation reference, and release history.
