@@ -9,7 +9,7 @@ import {
 
 export class AmazonClient extends CrawloraClient {
   constructor(options = {}) {
-    super({ ...options, userAgent: options.userAgent ?? "crawlora-amazon-js/0.1.2" });
+    super({ ...options, userAgent: options.userAgent ?? "crawlora-amazon-js/0.1.3" });
     this["charts"] = (...args) => this.request("amazon-charts", ...args);
     this["chartsCategories"] = (...args) => this.request("amazon-charts-categories", ...args);
     this["product"] = (...args) => this.request("amazon-product", ...args);
@@ -27,5 +27,5 @@ export {
   CrawloraServerError
 };
 export { groups, operations, operationCount, OperationIds } from "./operations.js";
-export const VERSION = "0.1.2";
+export const VERSION = "0.1.3";
 export default AmazonClient;

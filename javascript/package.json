@@ -1,6 +1,6 @@
 {
   "name": "@crawlora-org/amazon",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Crawlora Amazon API client with 5 endpoints for product search, suggestions, product details, and chart/category discovery",
   "homepage": "https://crawlora.net/?utm_source=npm&utm_medium=referral&utm_campaign=platform-clients&utm_content=amazon-javascript-homepage",
   "bugs": { "url": "https://github.com/Crawlora-org/crawlora-amazon/issues" },

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.3 — 2026-10-14
+
+- Updated operation contracts: amazon-product, amazon-search, amazon-suggest.
+
 ## 0.1.2 — 2026-10-12
 
 - List every supported endpoint in the repository and package READMEs.

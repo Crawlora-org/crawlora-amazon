@@ -8,7 +8,7 @@ The official Java client for Crawlora's hosted Amazon API. It exposes 5 endpoint
 <dependency>
   <groupId>net.crawlora</groupId>
   <artifactId>crawlora-amazon</artifactId>
-  <version>0.1.2</version>
+  <version>0.1.3</version>
 </dependency>
 ```
 

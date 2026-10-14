@@ -26,7 +26,7 @@ final class Client
     private ?\Closure $transport;
 
     public const PLATFORM = 'amazon';
-    public const VERSION = '0.1.2';
+    public const VERSION = '0.1.3';
     public const OPERATION_COUNT = 5;
     public const OPERATION_IDS = ["amazon-charts", "amazon-charts-categories", "amazon-product", "amazon-search", "amazon-suggest"];
 
@@ -57,7 +57,7 @@ JSON, true, 512, JSON_THROW_ON_ERROR);
         $url = $this->buildUrl($operation, $params);
         $headers = [
             'x-api-key: ' . $this->apiKey,
-            'User-Agent: crawlora-amazon-php/0.1.2',
+            'User-Agent: crawlora-amazon-php/0.1.3',
             'Accept: ' . (in_array('text/plain', $operation['produces'], true) ? 'application/json, text/plain' : 'application/json'),
         ];
         if ($payload !== null) {

@@ -127,45 +127,56 @@
     "amazon.Product": {
       "properties": {
         "about": {
+          "description": "Text of the product's feature bullet points (\"About this item\").",
           "type": "string"
         },
         "asin": {
+          "description": "Amazon Standard Identification Number (ASIN) of the product.",
           "example": "B0DGJ736JM",
           "type": "string"
         },
         "availability": {
+          "description": "True when the product page shows the item as in stock.",
           "example": true,
           "type": "boolean"
         },
         "brand_link": {
+          "description": "URL of the brand's store page on Amazon. Omitted when the page shows none.",
           "example": "https://www.amazon.com/stores/Apple/page/77D9E1F7-0337-4282-9DB6-B6B8FB2DC98D",
           "type": "string"
         },
         "brand_name": {
+          "description": "Brand name shown on the product page. Omitted when the page shows none.",
           "example": "Apple Store",
           "type": "string"
         },
         "customers_say": {
+          "description": "Summary of what customers say about the product, from the \"Customers say\" section.",
           "type": "string"
         },
         "description": {
+          "description": "Product description text, converted to Markdown.",
           "type": "string"
         },
         "images": {
+          "description": "URLs of the product's gallery images.",
           "items": {
             "type": "string"
           },
           "type": "array"
         },
         "is_free_delivery": {
+          "description": "True when the product page offers free delivery.",
           "example": true,
           "type": "boolean"
         },
         "is_free_return": {
+          "description": "True when the product page offers free returns.",
           "example": true,
           "type": "boolean"
         },
         "link": {
+          "description": "URL of the product page on Amazon.",
           "example": "https://www.amazon.com/dp/B0DGJ736JM/",
           "type": "string"
         },
@@ -175,6 +186,7 @@
           "type": "boolean"
         },
         "number_of_bought_in_last_month": {
+          "description": "Number of units bought in the past month, as shown on the page (for example 1000 for \"1K+ bought\"). Zero when the page shows none.",
           "example": 1000,
           "type": "integer"
         },
@@ -182,13 +194,16 @@
           "additionalProperties": {
             "type": "string"
           },
+          "description": "Key product facts from the overview table, as pairs of label and value.",
           "type": "object"
         },
         "price": {
+          "description": "Current price of the product, in US dollars.",
           "example": 189,
           "type": "number"
         },
         "rating": {
+          "description": "Average customer rating, out of 5.",
           "example": 4.4,
           "type": "number"
         },
@@ -197,39 +212,47 @@
             "format": "float64",
             "type": "number"
           },
+          "description": "Share of ratings for each star level, keyed by stars from `1` to `5`, with values from 0 to 1.",
           "type": "object"
         },
         "review_count": {
+          "description": "Total number of customer ratings shown on the page.",
           "example": 1055,
           "type": "integer"
         },
         "review_images": {
+          "description": "Customer-uploaded photos from the reviews section.",
           "items": {
             "$ref": "#/definitions/amazon.ReviewImage"
           },
           "type": "array"
         },
         "review_insights": {
+          "description": "Topics customers mention most often in reviews, each with a sentiment.",
           "items": {
             "$ref": "#/definitions/amazon.ReviewInsight"
           },
           "type": "array"
         },
         "reviews": {
+          "description": "Customer review samples shown on the product page.",
           "items": {
             "$ref": "#/definitions/amazon.Review"
           },
           "type": "array"
         },
         "seller_link": {
+          "description": "URL of the seller's page on Amazon.",
           "example": "https://www.amazon.com/b?node=10158976011",
           "type": "string"
         },
         "seller_name": {
+          "description": "Name of the seller offering the product.",
           "example": "Amazon Resale",
           "type": "string"
         },
         "title": {
+          "description": "Product title as shown on the Amazon product page.",
           "example": "Apple Watch SE (2nd Gen) [GPS 40mm] Smartwatch with Midnight Aluminium Case with Midnight Sport Band S/M. Fitness and Sleep Trackers, Crash Detection, Heart Rate Monitor, Retina Display",
           "type": "string"
         }
@@ -239,36 +262,46 @@
     "amazon.Review": {
       "properties": {
         "content": {
+          "description": "Text of the review.",
           "type": "string"
         },
         "country": {
+          "description": "Country the review was written in, as shown in \"Reviewed in ...\".",
           "example": "United States",
           "type": "string"
         },
         "helpful_count": {
+          "description": "Number of people who found the review helpful. Omitted when none are shown.",
           "example": 4,
           "type": "integer"
         },
         "link": {
+          "description": "URL of the review on Amazon.",
           "type": "string"
         },
         "rating": {
+          "description": "Star rating the reviewer gave, out of 5.",
           "example": 4,
           "type": "number"
         },
         "review_date": {
+          "description": "Date the review was posted, in RFC 3339 format.",
           "type": "string"
         },
         "title": {
+          "description": "Headline of the review.",
           "type": "string"
         },
         "user_link": {
+          "description": "URL of the reviewer's profile on Amazon.",
           "type": "string"
         },
         "user_name": {
+          "description": "Display name of the reviewer.",
           "type": "string"
         },
         "verified_purchase": {
+          "description": "True when the review carries the Verified Purchase badge.",
           "example": true,
           "type": "boolean"
         }
@@ -278,14 +311,17 @@
     "amazon.ReviewImage": {
       "properties": {
         "review_id": {
+          "description": "Id of the review the photo belongs to. Omitted when not shown.",
           "example": "R31YRHYX7G6DNK",
           "type": "string"
         },
         "thumbnail": {
+          "description": "URL of a smaller version of the photo. Omitted when not shown.",
           "example": "https://m.media-amazon.com/images/I/example._SY250_.jpg",
           "type": "string"
         },
         "url": {
+          "description": "URL of the full-size photo.",
           "example": "https://m.media-amazon.com/images/I/example.jpg",
           "type": "string"
         }
@@ -295,22 +331,27 @@
     "amazon.ReviewInsight": {
       "properties": {
         "label": {
+          "description": "Topic customers mention, for example `quality`.",
           "example": "quality",
           "type": "string"
         },
         "mention_percent": {
+          "description": "Whole-number percentage Amazon reports alongside the topic's mention count.",
           "example": 98,
           "type": "integer"
         },
         "mentions": {
+          "description": "Number of reviews that mention the topic.",
           "example": 41,
           "type": "integer"
         },
         "sentiment": {
+          "description": "Overall sentiment of the mentions, for example `positive`.",
           "example": "positive",
           "type": "string"
         },
         "summary": {
+          "description": "Short summary of what customers say about the topic.",
           "example": "Customers like the build quality.",
           "type": "string"
         }
@@ -320,50 +361,62 @@
     "amazon.SearchResponseItem": {
       "properties": {
         "asin": {
+          "description": "Amazon Standard Identification Number of the product.",
           "example": "B0DGJ736JM",
           "type": "string"
         },
         "image": {
+          "description": "URL of the product image.",
           "example": "https://m.media-amazon.com/images/I/61eE8SSyPWL._AC_UY545_FMwebp_QL65_.jpg",
           "type": "string"
         },
         "is_free_delivery": {
+          "description": "True when the card advertises free delivery.",
           "example": true,
           "type": "boolean"
         },
         "is_sponsored": {
+          "description": "True for a sponsored placement.",
           "example": true,
           "type": "boolean"
         },
         "link": {
+          "description": "Link to the product page on amazon.com.",
           "example": "https://www.amazon.com/Apple-Smartwatch-Midnight-Aluminium-Detection/dp/B0DGJ736JM/",
           "type": "string"
         },
         "list_price": {
+          "description": "List price before any discount, when the card shows one.",
           "example": 249,
           "type": "number"
         },
         "more_choice": {
+          "description": "Link to more buying choices for the product, when the card has one.",
           "example": "https://www.amazon.com/gp/offer-listing/B08KYJPTB6/",
           "type": "string"
         },
         "number_of_bought_in_last_month": {
+          "description": "Amazon's \"bought in past month\" figure. 0 when the card does not show one.",
           "example": 1000,
           "type": "integer"
         },
         "price": {
+          "description": "Current price shown on the card.",
           "example": 189,
           "type": "number"
         },
         "rating": {
+          "description": "Average star rating, out of 5.",
           "example": 4.4,
           "type": "number"
         },
         "review_count": {
+          "description": "Number of ratings.",
           "example": 1055,
           "type": "integer"
         },
         "title": {
+          "description": "Product title as shown on the result card.",
           "example": "Watch SE (2nd Gen) [GPS 40mm] Smartwatch with Midnight Aluminium Case with Midnight Sport Band S/M. Fitness and Sleep Trackers, Crash Detection, Heart Rate Monitor, Retina Display",
           "type": "string"
         }
@@ -684,7 +737,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized product details for an Amazon ASIN on `amazon.com`, including pricing, availability, overview data, inline review samples, and descriptive content.",
+        "description": "Returns product details for an Amazon ASIN on `amazon.com`, including pricing, availability, overview data, inline review samples, and descriptive content.",
         "operationId": "amazon-product",
         "parameters": [
           {
@@ -773,7 +826,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized Amazon search result cards for `amazon.com`.",
+        "description": "Searches `amazon.com` by keyword, with optional sort order and page. Each result card has the ASIN, title, link, image, price and list price, rating and review count, the bought-in-last-month figure, and flags for sponsored placement and free delivery.",
         "operationId": "amazon-search",
         "parameters": [
           {
@@ -856,7 +909,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns typeahead keyword suggestions from Amazon's public suggestion API for `amazon.com`.",
+        "description": "Returns Amazon's search-box autocomplete suggestions for a keyword prefix on `amazon.com`, as a plain list of suggested search phrases such as `apple watch bands`.",
         "operationId": "amazon-suggest",
         "parameters": [
           {

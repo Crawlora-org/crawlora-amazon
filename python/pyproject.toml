@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "crawlora-amazon"
-version = "0.1.2"
+version = "0.1.3"
 description = "Crawlora Amazon API client with 5 endpoints for product search, suggestions, product details, and chart/category discovery"
 readme = "README.md"
 keywords = ["crawlora", "api-client", "sdk", "web-scraping", "scraping-api", "amazon", "amazon-api", "amazon-scraper", "amazon-data", "amazon-product-search", "amazon-suggestions", "amazon-product-details", "amazon-chart-category-discovery"]
