@@ -52,6 +52,8 @@
   "repository": "https://github.com/Crawlora-org/crawlora-amazon",
   "ruby_gem_name": "crawlora-amazon",
   "ruby_history": "# Changelog\n\n## 0.1.1\n\n- Align generated Amazon client package versions for the next release.\n\n## 0.1.0\n\n- Initial focused Amazon Ruby client for Crawlora's hosted API.",
+  "rust_crate_name": "crawlora-amazon",
+  "rust_module_name": "crawlora_amazon",
   "source_contract_sha256": "58a42b604ca03b9d6cf27355e0e56f34719985b905a61df2f9f2a8c55f651f74",
   "version": "0.1.3"
 }
